@@ -18,18 +18,18 @@ api.interceptors.request.use(
   }
 );
 
-export const loginUser = async (email, password) => {
+export const registerUser = async (username, email, password) => {
   try {
-    const response = await api.post("/login", { email, password });
+    const response = await api.post("/register", { username, email, password });
     return response.data;
   } catch (error) {
     throw error.response?.data?.message || "Something went wrong!";
   }
 };
 
-export const registerUser = async (username, email, password) => {
+export const loginUser = async (email, password) => {
   try {
-    const response = await api.post("/register", { username, email, password });
+    const response = await api.post("/login", { email, password });
     return response.data;
   } catch (error) {
     throw error.response?.data?.message || "Something went wrong!";

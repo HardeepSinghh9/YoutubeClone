@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import dbconnect from "./config/db.js";
 import { registerUser, loginUser } from "./controllers/authController.js";
+import { verifyToken } from "./middlewares/authMiddleware.js";
 
 dotenv.config();
 const app = express();

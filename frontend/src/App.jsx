@@ -6,7 +6,7 @@ const App = () => {
     <div>
       <Header />
       <div className="p-4">
-        <h1>uTube Clone</h1>
+        <h1>component 2Tube Clone</h1>
       </div>
     </div>
   );

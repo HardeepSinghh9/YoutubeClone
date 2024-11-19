@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { logout, setUser } from "../features/authSlice";
 import SignInPopup from "./SignInPopup";
@@ -10,16 +10,17 @@ function Header() {
   const [isPopupOpen, setPopupOpen] = useState(false);
 
   const user = useSelector((state) => state.auth.user);
-
-  // console.log(user.username);
+  const token = useSelector((state) => state.auth.token);
+  console.log({ user, token });
 
   const dispatch = useDispatch();
 
   const handleSignInClick = (userData) => {
     dispatch(setUser(userData));
     setPopupOpen(false);
-    toast.success("Login successful!");
+    // toast.success("Login successful!");
   };
+
   const handleSignOut = () => {
     dispatch(logout());
     toast.success("logout successfull");
