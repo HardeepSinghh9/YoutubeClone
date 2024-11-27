@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 
 const channelSchema = new mongoose.Schema({
+  channelId: { type: String },
   channelName: { type: String, required: true },
-  owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  channelconnect: { type: String },
+  userId: { type: String },
   description: { type: String },
   channelBanner: { type: String, default: "" },
   subscribers: { type: Number, default: 0 },

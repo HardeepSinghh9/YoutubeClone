@@ -5,7 +5,10 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   avatar: { type: String, default: "" },
-  channels: [{ type: mongoose.Schema.Types.ObjectId, ref: "Channel" }],
+  userId: { type: String },
+  channels: { type: String },
+  channelId: { type: String },
+  channelconnect: { type: String },
 });
 
 export default mongoose.model("User", userSchema);

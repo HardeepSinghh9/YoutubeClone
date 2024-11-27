@@ -1,15 +1,14 @@
 import React from "react";
-import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Feed from "./components/Feed";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <Header />
-      <div className="p-4">
-        <h1>component 2Tube Clone</h1>
-      </div>
+    <div className="flex">
+      <Sidebar />
+      <Feed />
     </div>
   );
-};
+}
 
 export default App;
